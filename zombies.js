@@ -25,12 +25,16 @@ function Item(name) {
  * @param {number} damage   The weapon's damage.
  * @property {number} damage
  */
-
+function Weapon(name, damage) {
+  this.name = name;
+  this.damage = damage;
+}
 
 /**
  * Weapon Extends Item Class
  * -----------------------------
  */
+Weapon.prototype = new Item('');
 
 
 
