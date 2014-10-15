@@ -28,13 +28,15 @@ function Item(name) {
 function Weapon(name, damage) {
   this.name = name;
   this.damage = damage;
+  Item.call(this, name);
 }
 
 /**
  * Weapon Extends Item Class
  * -----------------------------
  */
-Weapon.prototype = new Item('');
+Weapon.prototype = new Item();
+
 
 
 
@@ -53,13 +55,16 @@ Weapon.prototype = new Item('');
  * @param {number} energy     The energy the food provides.
  * @property {number} energy
  */
-
+function Food(name, energy) {
+  this.name = name; 
+  this.energy = energy;
+}
 
 /**
  * Food Extends Item Class
  * -----------------------------
  */
-
+Food.prototype = new Item();
 
 
 /**
