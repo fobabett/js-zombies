@@ -58,6 +58,7 @@ Weapon.prototype = new Item();
 function Food(name, energy) {
   this.name = name; 
   this.energy = energy;
+  Item.call(this, name);
 }
 
 /**
