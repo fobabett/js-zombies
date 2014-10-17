@@ -144,7 +144,17 @@ function Player(name, health, strength, speed) {
  * @param {Item/Weapon/Food} item   The item to take.
  * @return {boolean} true/false     Whether player was able to store item in pack.
  */
-
+Player.prototype.takeItem = function(item){
+  if(this.getPack().length < 3) {
+    console.log(Player.name + ' ' + item.name);
+    console.log(item.name + " was stored in your pack.");
+    this.getPack().push(item);
+    return true;
+  } else {
+    console.log("Pack is full. Can't store " + item.name);
+    return false;
+  }
+}
 
 
 /**
