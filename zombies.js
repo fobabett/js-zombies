@@ -279,7 +279,14 @@ Player.prototype.eat = function(itemToEat) {
  * @name useItem
  * @param {Item/Weapon/Food} item   The item to use.
  */
-
+Player.prototype.useItem = function(item) {
+  if(item instanceof Weapon) {
+    this.equip(item);
+  }
+  if(item instanceof Food) {
+    this.eat(item);
+  }
+}
 
 /**
  * Player Class Method => equippedWith()
