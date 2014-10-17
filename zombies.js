@@ -382,8 +382,13 @@ FastZombie.prototype = new Zombie();
  * StrongZombie Extends Zombie Class
  * -----------------------------
  */
-
-
+function StrongZombie(health, strength, speed) {
+  Zombie.call(this, health, strength, speed);
+  this.health = health;
+  this.strength = strength;
+  this.speed = speed;
+}
+StrongZombie.prototype = new Zombie();
 
 /**
  * Class => RangedZombie(health, strength, speed)
