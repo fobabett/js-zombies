@@ -404,7 +404,13 @@ StrongZombie.prototype = new Zombie();
  * @param {number} strength         The zombie's strength.
  * @param {number} speed            The zombie's speed.
  */
-
+function RangedZombie(health, strength, speed) {
+  Zombie.call(this, health, strength, speed);
+  this.health = health;
+  this.strength = strength;
+  this.speed = speed;
+}
+RangedZombie.prototype = new Zombie();
 
 /**
  * StrongZombie Extends Zombie Class
