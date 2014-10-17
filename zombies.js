@@ -182,7 +182,16 @@ Player.prototype.takeItem = function(item){
  * @param {Item/Weapon/Food} item   The item to discard.
  * @return {boolean} true/false     Whether player was able to remove item from pack.
  */
-
+Player.prototype.discardItem = function(item) {
+  var checkForItem = this.getPack().indexOf(item);
+  if(checkForItem === -1) {
+    console.log(item.name + " not found");
+    return false;
+  } else {
+    this.getPack().splice(checkForItem,1);
+    console.log(item.name + " removed from pack");
+  }
+}
 
 /**
  * Player Class Method => equip(itemToEquip)
