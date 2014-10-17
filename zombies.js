@@ -251,13 +251,19 @@ Player.prototype.equip = function(itemToEquip) {
  */
 Player.prototype.eat = function(itemToEat) {
   this.itemToEat = itemToEat;
-  for(var i = 0; i<this.getPack().length; i++){
-    if(this.getPack(i).indexOf(itemToEat)) {
+  var index = this.getPack().indexOf(itemToEat);
+  if(itemToEat instanceof Food) {
+    if(index !== -1) {
       this.getPack().splice(itemToEat, 1);
-      return true;
-    } else {
-      return false;
+      this.health += itemToEat.energy;
+      if(this.health > this.getMaxHealth()){
+        this.health = this.getMaxHealth();
+      } else {
+        return this.health;
+      }
     }
+  } else {
+    console.log("Food not in pack");
   }
 }
 
