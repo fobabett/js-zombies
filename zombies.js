@@ -184,12 +184,13 @@ Player.prototype.takeItem = function(item){
  */
 Player.prototype.discardItem = function(item) {
   var checkForItem = this.getPack().indexOf(item);
-  if(checkForItem === -1) {
-    console.log(item.name + " not found");
-    return false;
-  } else {
+  if(checkForItem != -1) {
     this.getPack().splice(checkForItem,1);
     console.log(item.name + " removed from pack");
+    return true;
+  } else {
+    console.log(item.name + " not found");
+    return false;
   }
 }
 
