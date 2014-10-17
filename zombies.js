@@ -410,13 +410,13 @@ function RangedZombie(health, strength, speed) {
   this.strength = strength;
   this.speed = speed;
 }
-RangedZombie.prototype = new Zombie();
+
 
 /**
  * StrongZombie Extends Zombie Class
  * -----------------------------
  */
-
+RangedZombie.prototype = new Zombie();
 
 
 /**
@@ -433,12 +433,18 @@ RangedZombie.prototype = new Zombie();
  * @param {number} strength         The zombie's strength.
  * @param {number} speed            The zombie's speed.
  */
-
+function ExplodingZombie(health, strength, speed) {
+  Zombie.call(this, health, strength, speed);
+  this.health = health;
+  this.strength = strength;
+  this.speed = speed;
+}
 
 /**
  * ExplodingZombie Extends Zombie Class
  * -----------------------------
  */
+ExplodingZombie.prototype = new Zombie();
 
 
 
