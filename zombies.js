@@ -117,6 +117,14 @@ function Player(name, health, strength, speed) {
  *
  * @name checkPack
  */
+  Player.prototype.checkPack = function() {
+    var pack = this.getPack();
+    console.log("Pack: ");
+    for(var i=0; i<pack.length; i++){
+      console.log(Item);
+    }
+    return pack;
+  } 
 
 
 /**
@@ -136,6 +144,7 @@ function Player(name, health, strength, speed) {
  * @param {Item/Weapon/Food} item   The item to take.
  * @return {boolean} true/false     Whether player was able to store item in pack.
  */
+
 
 
 /**
